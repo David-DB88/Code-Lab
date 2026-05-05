@@ -1,0 +1,46 @@
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 720px;
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.eyebrow {
+  font-family: $font-mono;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $color-secondary;
+  padding: 6px 12px;
+  border: 1px solid $color-border;
+  border-radius: 999px;
+  background: $color-surface;
+}
+
+.title {
+  font-size: clamp(28px, 4.4vw, 48px);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.description {
+  color: $color-muted;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 640px;
+}

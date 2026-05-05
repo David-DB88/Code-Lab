@@ -1,0 +1,88 @@
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family: $font-display;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.2s $ease-out, box-shadow 0.2s $ease-out,
+    background 0.2s $ease-out, border-color 0.2s $ease-out, color 0.2s $ease-out;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.md {
+  padding: 12px 22px;
+  font-size: 14px;
+}
+
+.lg {
+  padding: 16px 28px;
+  font-size: 15px;
+}
+
+.primary {
+  background: $gradient-primary;
+  color: #0b0d18;
+  box-shadow: $shadow-glow;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 30px 70px -20px rgba(124, 92, 255, 0.7);
+  }
+}
+
+.secondary {
+  background: $color-surface;
+  border-color: $color-border;
+  color: $color-text;
+  backdrop-filter: blur(14px);
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    border-color: $color-border-strong;
+    background: $color-surface-strong;
+  }
+}
+
+.ghost {
+  background: transparent;
+  border-color: transparent;
+  color: $color-muted;
+
+  &:hover:not(:disabled) {
+    color: $color-text;
+    background: $color-surface;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  display: inline-flex;
+}
+
+.iconOnly {
+  padding: 12px;
+  border-radius: 14px;
+}

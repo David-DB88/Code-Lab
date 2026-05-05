@@ -1,0 +1,184 @@
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background 0.3s $ease-out, border-color 0.3s $ease-out,
+    backdrop-filter 0.3s $ease-out;
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  background: rgba(6, 7, 13, 0.7);
+  border-bottom-color: $color-border;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: $font-display;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+}
+
+.brandMark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: $gradient-primary;
+  box-shadow: $shadow-glow;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: 5px;
+    background: rgba(6, 7, 13, 0.55);
+  }
+}
+
+.brandText span {
+  @include gradient-text;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  padding: 6px;
+  border-radius: 999px;
+  backdrop-filter: blur(14px);
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.navLink {
+  position: relative;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-muted;
+  border-radius: 999px;
+  transition: color 0.2s $ease-out, background 0.2s $ease-out;
+
+  &:hover {
+    color: $color-text;
+  }
+
+  &.active {
+    color: $color-text;
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.cta {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  background: $gradient-primary;
+  color: #0b0d18;
+  box-shadow: $shadow-glow;
+  transition: transform 0.2s $ease-out, box-shadow 0.2s $ease-out;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 25px 60px -20px rgba(124, 92, 255, 0.7);
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.menuButton {
+  display: none;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  color: $color-text;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+
+  @include tablet {
+    display: inline-flex;
+  }
+}
+
+.mobile {
+  position: fixed;
+  inset: 72px 0 0 0;
+  background: rgba(6, 7, 13, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform: translateY(-12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s $ease-out, opacity 0.3s $ease-out;
+
+  @media (min-width: #{$bp-tablet + 1px}) {
+    display: none;
+  }
+}
+
+.mobileOpen {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 32px $container-pad;
+}
+
+.mobileLink {
+  padding: 16px 18px;
+  font-size: 18px;
+  font-weight: 500;
+  color: $color-muted;
+  border-radius: $radius-md;
+  border: 1px solid transparent;
+
+  &.active,
+  &:hover {
+    color: $color-text;
+    border-color: $color-border;
+    background: $color-surface;
+  }
+}
+
+.mobileCta {
+  margin-top: 12px;
+  padding: 16px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: $radius-md;
+  background: $gradient-primary;
+  color: #0b0d18;
+  text-align: center;
+}

@@ -1,0 +1,58 @@
+@use "./variables" as *;
+
+@mixin mobile {
+  @media (max-width: #{$bp-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$bp-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$bp-desktop}) {
+    @content;
+  }
+}
+
+@mixin glass {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+@mixin glass-strong {
+  background: $color-surface-strong;
+  border: 1px solid $color-border-strong;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+@mixin gradient-text($gradient: $gradient-primary) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@mixin focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 2px $color-background, 0 0 0 4px $color-primary;
+}
+
+@mixin section-padding {
+  padding: 120px 0;
+
+  @include tablet {
+    padding: 96px 0;
+  }
+
+  @include mobile {
+    padding: 72px 0;
+  }
+}

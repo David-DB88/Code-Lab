@@ -1,0 +1,70 @@
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+.card {
+  position: relative;
+  padding: 28px 26px;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.3s $ease-out, border-color 0.3s $ease-out,
+    background 0.3s $ease-out;
+  @include glass;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: $color-border-strong;
+    background: $color-surface-strong;
+
+    .shine {
+      opacity: 1;
+    }
+
+    .iconWrap {
+      color: $color-text;
+      border-color: rgba(124, 92, 255, 0.6);
+      box-shadow: 0 12px 40px -10px rgba(124, 92, 255, 0.55);
+    }
+  }
+}
+
+.iconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $color-border;
+  background: rgba(124, 92, 255, 0.12);
+  color: $color-secondary;
+  transition: color 0.3s $ease-out, border-color 0.3s $ease-out,
+    box-shadow 0.3s $ease-out;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.description {
+  color: $color-muted;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.shine {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      280px 200px at 0% 0%,
+      rgba(124, 92, 255, 0.18),
+      transparent 70%
+    );
+  opacity: 0;
+  transition: opacity 0.4s $ease-out;
+  pointer-events: none;
+}

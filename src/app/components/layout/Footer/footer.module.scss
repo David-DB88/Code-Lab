@@ -1,0 +1,102 @@
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+.footer {
+  margin-top: 80px;
+  padding: 64px 0 32px;
+  border-top: 1px solid $color-border;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.3));
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr auto;
+  gap: 48px;
+  align-items: start;
+  padding-bottom: 40px;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.lead {
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  p {
+    color: $color-muted;
+    font-size: 14px;
+  }
+}
+
+.brand {
+  font-family: $font-display;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+
+  a {
+    color: $color-muted;
+    font-size: 14px;
+    transition: color 0.2s $ease-out;
+
+    &:hover {
+      color: $color-text;
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.iconLink {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid $color-border;
+  background: $color-surface;
+  color: $color-text;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s $ease-out, border-color 0.2s $ease-out,
+    background 0.2s $ease-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: $color-border-strong;
+    background: $color-surface-strong;
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: $color-subtle;
+  border-top: 1px solid $color-border;
+  padding-top: 24px;
+  gap: 16px;
+
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.tag {
+  font-family: $font-mono;
+  letter-spacing: 0.04em;
+}

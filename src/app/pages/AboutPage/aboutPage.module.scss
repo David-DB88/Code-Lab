@@ -1,0 +1,57 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.page {
+  padding-top: 100px;
+}
+
+.heading {
+  margin: 0 auto;
+
+  :global(span) {
+    @include gradient-text;
+  }
+}
+
+.grid {
+  margin-top: 56px;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pillar {
+  padding: 28px;
+  border-radius: $radius-lg;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  @include glass;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  p {
+    color: $color-muted;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+.iconBox {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(124, 92, 255, 0.12);
+  border: 1px solid rgba(124, 92, 255, 0.3);
+  color: $color-secondary;
+}

@@ -1,0 +1,137 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  padding: 120px 0 80px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+
+  @include tablet {
+    min-height: auto;
+    padding: 80px 0 60px;
+  }
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 760px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: $font-mono;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $color-secondary;
+  border: 1px solid $color-border;
+  background: $color-surface;
+  backdrop-filter: blur(14px);
+}
+
+.title {
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.gradient {
+  @include gradient-text($gradient-primary);
+}
+
+.gradientAlt {
+  @include gradient-text($gradient-accent);
+}
+
+.lead {
+  font-size: clamp(15px, 1.6vw, 18px);
+  color: $color-muted;
+  max-width: 620px;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  li {
+    padding: 8px 14px;
+    font-size: 13px;
+    font-family: $font-mono;
+    color: $color-muted;
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: 999px;
+  }
+}
+
+.scrollHint {
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 36px;
+  border: 1px solid $color-border-strong;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+  z-index: 1;
+  opacity: 0.7;
+
+  span {
+    width: 2px;
+    height: 8px;
+    background: $color-text;
+    border-radius: 2px;
+    animation: scrollHint 1.6s infinite ease-in-out;
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+
+@keyframes scrollHint {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,74 @@
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px;
+  border-radius: $radius-lg;
+  transition: transform 0.4s $ease-out, border-color 0.4s $ease-out,
+    background 0.4s $ease-out, box-shadow 0.4s $ease-out;
+  @include glass;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: $color-border-strong;
+    background: $color-surface-strong;
+    box-shadow: $shadow-card;
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 6px 8px 12px;
+}
+
+.category {
+  font-family: $font-mono;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $color-secondary;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.description {
+  color: $color-muted;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.actions {
+  margin-top: 6px;
+  display: flex;
+  gap: 12px;
+}
+
+.openLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid $color-border;
+  background: $color-surface;
+  color: $color-text;
+  transition: transform 0.2s $ease-out, border-color 0.2s $ease-out,
+    background 0.2s $ease-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: $color-border-strong;
+    background: $color-surface-strong;
+  }
+}

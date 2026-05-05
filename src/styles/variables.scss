@@ -1,0 +1,44 @@
+$color-background: #06070d;
+$color-background-deep: #03040a;
+$color-surface: rgba(255, 255, 255, 0.06);
+$color-surface-strong: rgba(255, 255, 255, 0.1);
+$color-border: rgba(255, 255, 255, 0.12);
+$color-border-strong: rgba(255, 255, 255, 0.2);
+$color-text: #f5f7fb;
+$color-muted: #a5adba;
+$color-subtle: #6b7280;
+$color-primary: #7c5cff;
+$color-primary-soft: rgba(124, 92, 255, 0.18);
+$color-secondary: #00d4ff;
+$color-secondary-soft: rgba(0, 212, 255, 0.18);
+$color-accent: #ff5cf2;
+
+$gradient-primary: linear-gradient(135deg, #7c5cff 0%, #00d4ff 100%);
+$gradient-accent: linear-gradient(135deg, #7c5cff 0%, #ff5cf2 100%);
+$gradient-surface: linear-gradient(
+  180deg,
+  rgba(255, 255, 255, 0.05) 0%,
+  rgba(255, 255, 255, 0.02) 100%
+);
+
+$radius-sm: 8px;
+$radius-md: 14px;
+$radius-lg: 22px;
+$radius-xl: 32px;
+
+$shadow-glow: 0 20px 60px -25px rgba(124, 92, 255, 0.55);
+$shadow-card: 0 30px 80px -40px rgba(0, 0, 0, 0.6);
+
+$font-display: "Space Grotesk", "Inter", "Segoe UI", system-ui, sans-serif;
+$font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+$font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+
+$container-max: 1280px;
+$container-pad: 24px;
+
+$bp-mobile: 640px;
+$bp-tablet: 960px;
+$bp-desktop: 1280px;
+
+$ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+$ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);

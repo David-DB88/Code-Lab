@@ -1,0 +1,217 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.page {
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.heading {
+  margin: 0 auto;
+
+  :global(span) {
+    @include gradient-text;
+  }
+}
+
+.layout {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 28px;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.channels {
+  padding: 32px;
+  border-radius: $radius-lg;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  @include glass;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  a {
+    color: $color-text;
+    transition: color 0.2s $ease-out;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}
+
+.channelIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(124, 92, 255, 0.12);
+  border: 1px solid rgba(124, 92, 255, 0.3);
+  color: $color-secondary;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.channelLabel {
+  display: block;
+  font-family: $font-mono;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $color-subtle;
+  margin-bottom: 2px;
+}
+
+.form {
+  padding: 32px;
+  border-radius: $radius-lg;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  @include glass;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  span {
+    font-size: 13px;
+    color: $color-muted;
+    font-weight: 500;
+  }
+
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: $color-text;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    padding: 12px 14px;
+    transition: border-color 0.2s $ease-out, background 0.2s $ease-out;
+    resize: vertical;
+
+    &::placeholder {
+      color: $color-subtle;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: rgba(124, 92, 255, 0.5);
+      background: rgba(124, 92, 255, 0.06);
+    }
+  }
+
+  select {
+    appearance: none;
+    background-image: linear-gradient(
+        45deg,
+        transparent 50%,
+        $color-muted 50%
+      ),
+      linear-gradient(135deg, $color-muted 50%, transparent 50%);
+    background-position: calc(100% - 18px) 18px, calc(100% - 13px) 18px;
+    background-size: 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 36px;
+  }
+}
+
+.notice {
+  font-size: 13px;
+  color: $color-subtle;
+  margin-top: 4px;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+.banner {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border-radius: $radius-md;
+  font-size: 14px;
+  margin-top: 4px;
+
+  strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  span {
+    color: $color-muted;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+}
+
+.bannerSuccess {
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: $color-secondary;
+
+  strong {
+    color: $color-text;
+  }
+}
+
+.bannerError {
+  background: rgba(255, 92, 92, 0.08);
+  border: 1px solid rgba(255, 92, 92, 0.35);
+  color: #ff8a8a;
+
+  strong {
+    color: $color-text;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
