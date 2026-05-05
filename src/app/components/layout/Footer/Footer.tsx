@@ -31,7 +31,7 @@ export const Footer = () => {
             <Mail size={18} />
           </a>
           <a
-            href="https://t.me/CodeLabBisBot"
+            href="https://t.me/CodeLabDev"
             target="_blank"
             rel="noreferrer"
             aria-label="Telegram"

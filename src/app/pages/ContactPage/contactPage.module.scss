@@ -63,6 +63,46 @@
   }
 }
 
+.copyButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: $color-text;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s $ease-out;
+
+  &:hover {
+    color: $color-secondary;
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: $color-secondary;
+  }
+
+  span {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  }
+}
+
+.copyIcon {
+  opacity: 0.5;
+  transition: opacity 0.2s $ease-out;
+
+  .copyButton:hover & {
+    opacity: 1;
+  }
+}
+
+.copiedIcon {
+  color: $color-secondary;
+}
+
 .channelIcon {
   width: 36px;
   height: 36px;

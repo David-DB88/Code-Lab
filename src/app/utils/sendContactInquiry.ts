@@ -81,24 +81,27 @@ const sendToTelegram = async (
     };
   }
 
+  const params = new URLSearchParams({
+    chat_id: TELEGRAM_CHAT_ID,
+    text: buildTelegramMessage(inquiry),
+    parse_mode: "HTML",
+    disable_web_page_preview: "true",
+  });
+
   try {
     const response = await fetch(TELEGRAM_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: TELEGRAM_CHAT_ID,
-        text: buildTelegramMessage(inquiry),
-        parse_mode: "HTML",
-        disable_web_page_preview: true,
-      }),
+      body: params,
     });
     const data = await response.json();
     if (data.ok) return { ok: true };
+    console.error("Telegram delivery failed:", data);
     return {
       ok: false,
       errorMessage: data.description ?? "Telegram delivery failed.",
     };
-  } catch {
+  } catch (error) {
+    console.error("Telegram fetch error:", error);
     return { ok: false, errorMessage: "Network error reaching Telegram." };
   }
 };

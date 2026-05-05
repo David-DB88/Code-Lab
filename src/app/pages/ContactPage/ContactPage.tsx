@@ -1,42 +1,78 @@
-import { useState, type FormEvent } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, Loader2, Mail, MapPin, Send, TriangleAlert } from "lucide-react";
+import {
+  Check,
+  CheckCircle2,
+  Copy,
+  Loader2,
+  Mail,
+  MapPin,
+  Send,
+  TriangleAlert,
+} from "lucide-react";
 import classNames from "classnames";
 import { Container } from "../../components/ui/Container/Container";
 import { SectionTitle } from "../../components/ui/SectionTitle/SectionTitle";
 import { Button } from "../../components/ui/Button/Button";
+import { Select } from "../../components/ui/Select/Select";
 import { sendContactInquiry } from "../../utils/sendContactInquiry";
 import styles from "./contactPage.module.scss";
 
+const PROJECT_TYPES = [
+  { value: "Landing page", label: "Landing page" },
+  { value: "Business website", label: "Business website" },
+  { value: "Web application", label: "Web application" },
+  { value: "Other", label: "Other" },
+];
+
 type SubmitStatus = "idle" | "sending" | "success" | "error";
 
-const CHANNELS = [
+type Channel = {
+  id: string;
+  icon: ReactNode;
+  label: string;
+  value: string;
+  href?: string;
+  copyable?: boolean;
+};
+
+const CHANNELS: Channel[] = [
   {
     id: "email",
     icon: <Mail size={18} />,
     label: "Email",
     value: "code.lab.bis@gmail.com",
-    href: "mailto:code.lab.bis@gmail.com",
+    copyable: true,
   },
   {
     id: "telegram",
     icon: <Send size={18} />,
     label: "Telegram",
-    value: "@CodeLabBisBot",
-    href: "https://t.me/CodeLabBisBot",
+    value: "@CodeLabDev",
+    href: "https://t.me/CodeLabDev",
   },
   {
     id: "location",
     icon: <MapPin size={18} />,
     label: "Studio",
     value: "Remote-first, EU & Armenia",
-    href: undefined,
   },
 ];
 
 export const ContactPage = () => {
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  const handleCopy = async (id: string, text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedId(id);
+      window.setTimeout(() => setCopiedId(null), 2000);
+    } catch {
+      // ignore — older browsers without clipboard API
+    }
+  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -98,7 +134,21 @@ export const ContactPage = () => {
                   <span className={styles.channelIcon}>{channel.icon}</span>
                   <div>
                     <span className={styles.channelLabel}>{channel.label}</span>
-                    {channel.href ? (
+                    {channel.copyable ? (
+                      <button
+                        type="button"
+                        className={styles.copyButton}
+                        onClick={() => handleCopy(channel.id, channel.value)}
+                        aria-label={`Copy ${channel.label}`}
+                      >
+                        <span>{channel.value}</span>
+                        {copiedId === channel.id ? (
+                          <Check size={14} className={styles.copiedIcon} />
+                        ) : (
+                          <Copy size={14} className={styles.copyIcon} />
+                        )}
+                      </button>
+                    ) : channel.href ? (
                       <a
                         href={channel.href}
                         target={channel.href.startsWith("http") ? "_blank" : undefined}
@@ -146,18 +196,15 @@ export const ContactPage = () => {
               />
             </label>
 
-            <label className={styles.field}>
+            <div className={styles.field}>
               <span>Project type</span>
-              <select name="type" defaultValue="" disabled={isSending}>
-                <option value="" disabled>
-                  Choose a project type…
-                </option>
-                <option value="Landing page">Landing page</option>
-                <option value="Business website">Business website</option>
-                <option value="Web application">Web application</option>
-                <option value="Other">Other</option>
-              </select>
-            </label>
+              <Select
+                name="type"
+                placeholder="Choose a project type…"
+                options={PROJECT_TYPES}
+                disabled={isSending}
+              />
+            </div>
 
             <label className={styles.field}>
               <span>Message</span>

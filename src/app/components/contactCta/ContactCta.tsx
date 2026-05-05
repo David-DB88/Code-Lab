@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "../ui/Container/Container";
 import { Button } from "../ui/Button/Button";
 import styles from "./contactCta.module.scss";
@@ -31,15 +31,11 @@ export const ContactCta = () => {
             <div className={styles.actions}>
               <Button
                 as="a"
-                href="mailto:code.lab.bis@gmail.com"
+                href="/contact"
                 size="lg"
-                iconLeft={<Mail size={16} />}
                 iconRight={<ArrowRight size={16} />}
               >
                 Contact Code Lab
-              </Button>
-              <Button as="a" href="/contact" size="lg" variant="secondary">
-                Get in touch
               </Button>
             </div>
           </div>
