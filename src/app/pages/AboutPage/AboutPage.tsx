@@ -37,16 +37,14 @@ const TEAM: TeamMember[] = [
   {
     id: "frontend",
     role: "Frontend Lead",
-    name: "Davit Bejanyan",
     icon: <Code2 size={20} />,
     description:
-      "4+ years building production React and Vue applications at established companies including Saber Interactive and Provectus. Deep experience with TypeScript, performance optimization, complex UI work, and analytical/marketplace platforms.",
+      "4+ years building production React and Vue applications at established product companies. Deep experience with TypeScript, performance optimization, complex UI work, and analytical/marketplace platforms.",
     highlights: ["React", "Vue", "TypeScript", "Three.js", "Performance"],
   },
   {
     id: "design",
     role: "Designer",
-    name: "Gohar Hovhannisyan",
     icon: <Palette size={20} />,
     description:
       "4+ years of design experience across digital and print. Branding, UI mockups, marketing graphics, and visual systems. Adobe Photoshop, Illustrator, Figma, and CorelDRAW.",
