@@ -2,64 +2,56 @@ export type Service = {
   id: string;
   title: string;
   description: string;
-  icon: "code" | "layout" | "rocket" | "layers" | "smartphone" | "gauge" | "sparkles" | "wand";
+  icon:
+    | "layers"
+    | "server"
+    | "brain"
+    | "layout"
+    | "shopping"
+    | "palette";
 };
 
 export const SERVICES: Service[] = [
   {
-    id: "web-apps",
-    title: "Web application development",
+    id: "full-stack",
+    title: "Full-Stack Web Applications",
     description:
-      "Production-ready React applications built with strong architecture, clear data flow, and a focus on long-term maintainability.",
-    icon: "code",
-  },
-  {
-    id: "business-sites",
-    title: "Business websites",
-    description:
-      "Conversion-driven business sites that present your services and brand with structured, trustworthy presentation.",
-    icon: "layout",
-  },
-  {
-    id: "landing",
-    title: "Landing pages",
-    description:
-      "High-impact landing pages designed to launch products, validate ideas, and convert visitors into qualified leads.",
-    icon: "rocket",
-  },
-  {
-    id: "interactive",
-    title: "Interactive platforms",
-    description:
-      "Animated, interactive product experiences with smooth transitions, 3D scenes, and rich state management.",
-    icon: "sparkles",
-  },
-  {
-    id: "architecture",
-    title: "Frontend architecture",
-    description:
-      "Scalable module structure, type-safe domains, and clean component boundaries that survive growing teams.",
+      "Production web applications built end-to-end. .NET backend with EF Core and microservices, React or Vue frontend with TypeScript, and integrated UI design. Clean Architecture, scalable, maintainable.",
     icon: "layers",
   },
   {
-    id: "ui",
-    title: "UI implementation",
+    id: "backend-api",
+    title: "Backend & API Development",
     description:
-      "Pixel-accurate implementations of design systems with attention to spacing, typography, and motion details.",
-    icon: "wand",
+      ".NET / ASP.NET Core REST APIs, microservices, and integrations. EF Core, Dapper, RabbitMQ, Redis, complex SQL, and third-party API connections. Strong on Clean Architecture and senior-level system design.",
+    icon: "server",
   },
   {
-    id: "responsive",
-    title: "Responsive design",
+    id: "ai-integration",
+    title: "AI Integration",
     description:
-      "Mobile-first layouts that look intentional on every breakpoint, from 320px phones to ultrawide displays.",
-    icon: "smartphone",
+      "We integrate Claude AI into production .NET systems — agentic workflows, tool calling, structured outputs, and Model Context Protocol (MCP). Real production AI integration, not experiments.",
+    icon: "brain",
   },
   {
-    id: "performance",
-    title: "Performance optimization",
+    id: "frontend",
+    title: "Frontend Development",
     description:
-      "Faster loads, smoother animations, and leaner bundles — measured with real-world performance budgets.",
-    icon: "gauge",
+      "Senior React and Vue applications. TypeScript, scalable component architecture, performance optimization, and pixel-accurate UI implementation. Built for products that grow.",
+    icon: "layout",
+  },
+  {
+    id: "ecommerce",
+    title: "Ecommerce & Marketplaces",
+    description:
+      "Full-stack ecommerce platforms with payment integrations, real-time features, multi-vendor support, and admin tools. Backend, frontend, and design coordinated as one team.",
+    icon: "shopping",
+  },
+  {
+    id: "design",
+    title: "UI/UX Design & Branding",
+    description:
+      "In-house design — UI mockups in Figma, branding, marketing materials, and visual systems. Designs that are buildable, not just pretty.",
+    icon: "palette",
   },
 ];

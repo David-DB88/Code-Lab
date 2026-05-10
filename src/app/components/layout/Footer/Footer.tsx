@@ -11,7 +11,8 @@ export const Footer = () => {
         <div className={styles.lead}>
           <span className={styles.brand}>Code Lab</span>
           <p>
-            We build modern web applications, interactive digital products, and scalable solutions that grow with your business.
+            A senior team building production-grade web applications end-to-end —
+            backend, frontend, and design under one roof.
           </p>
         </div>
 
@@ -53,7 +54,7 @@ export const Footer = () => {
 
       <Container className={styles.bottom}>
         <span>© {new Date().getFullYear()} Code Lab. All rights reserved.</span>
-        <span className={styles.tag}>Crafted with React, TypeScript &amp; Three.js</span>
+        <span className={styles.tag}>Crafted with .NET, React, TypeScript &amp; care</span>
       </Container>
     </footer>
   );

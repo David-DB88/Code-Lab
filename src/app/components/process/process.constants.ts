@@ -16,9 +16,9 @@ export const PROCESS_STEPS: ProcessStep[] = [
   {
     id: "planning",
     step: "02",
-    title: "Planning architecture",
+    title: "Architecture & system design",
     description:
-      "We design the module structure, data flow, and tech stack so that the product can grow without rewrites.",
+      "We design backend architecture, data models, API contracts, frontend module structure, and infrastructure decisions before code is written. Saves rewrites later.",
   },
   {
     id: "ui",

@@ -6,39 +6,39 @@ export type WhyPoint = {
 
 export const WHY_POINTS: WhyPoint[] = [
   {
-    id: "architecture",
-    title: "Clean architecture",
+    id: "senior-team",
+    title: "Senior team, no juniors disguised as seniors",
     description:
-      "Module-based structure with clear separation between UI, data, and business logic — designed to scale.",
+      "Backend Lead with 5 years of .NET production experience and a prior career in finance and audit. Frontend Lead with 4+ years at established product companies. In-house designer. No outsourcing.",
   },
   {
-    id: "stack",
-    title: "Modern technologies",
+    id: "backend-depth",
+    title: "Backend depth",
     description:
-      "React, TypeScript, Three.js, modern build tooling — we pick what's right for the product, not what's trendy.",
+      "Real production experience with .NET, microservices, complex data access, message queues, and scalable architecture. We build software that runs reliably under load.",
   },
   {
-    id: "scalable",
-    title: "Scalable frontend",
+    id: "ai-capability",
+    title: "AI integration capability",
     description:
-      "Solutions that survive new features, new teams, and new requirements without rewrites.",
+      "We integrate Claude AI into production .NET systems — one of few small teams with hands-on production AI integration experience.",
   },
   {
-    id: "responsive",
-    title: "Responsive UI",
+    id: "in-house-design",
+    title: "In-house design",
     description:
-      "Every layout is intentionally tuned for desktop, tablet, and mobile from the very first pixel.",
+      "UI/UX, branding, and visual assets handled by our designer — not subcontracted. Tight coordination between code and design.",
   },
   {
-    id: "details",
-    title: "Attention to detail",
+    id: "domain-expertise",
+    title: "Domain expertise: Fintech & Audit-Tech",
     description:
-      "Spacing, motion, typography, focus states — the small details that make a product feel premium.",
+      "Real understanding of financial systems, IFRS, internal controls, and compliance requirements — not just developers who can write code in that domain.",
   },
   {
-    id: "experience",
-    title: "Real project experience",
+    id: "team-coordination",
+    title: "Tight team coordination",
     description:
-      "A portfolio of shipped products across entertainment, business, and institutional websites.",
+      "We work as one team, not strangers paired together. No \"frontend waiting for backend\" delays.",
   },
 ];

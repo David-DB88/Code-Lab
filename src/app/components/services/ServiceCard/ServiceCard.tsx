@@ -1,26 +1,22 @@
 import { motion } from "framer-motion";
 import {
-  Code2,
-  Layout,
-  Rocket,
+  Brain,
   Layers,
-  Smartphone,
-  Gauge,
-  Sparkles,
-  Wand2,
+  Layout,
+  Palette,
+  Server,
+  ShoppingBag,
 } from "lucide-react";
 import type { Service } from "../services.constants";
 import styles from "./serviceCard.module.scss";
 
 const ICONS = {
-  code: Code2,
-  layout: Layout,
-  rocket: Rocket,
   layers: Layers,
-  smartphone: Smartphone,
-  gauge: Gauge,
-  sparkles: Sparkles,
-  wand: Wand2,
+  server: Server,
+  brain: Brain,
+  layout: Layout,
+  shopping: ShoppingBag,
+  palette: Palette,
 } as const;
 
 type ServiceCardProps = {

@@ -13,35 +13,39 @@
   }
 }
 
-.grid {
-  margin-top: 56px;
+.sectionLabel {
+  font-family: $font-mono;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $color-secondary;
+  margin: 64px 0 24px;
+  text-align: left;
+}
+
+.teamGrid {
   display: grid;
   gap: 18px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
-  @include mobile {
+  @include tablet {
     grid-template-columns: 1fr;
   }
 }
 
-.pillar {
+.member {
   padding: 28px;
   border-radius: $radius-lg;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   @include glass;
+}
 
-  h3 {
-    font-size: 18px;
-    font-weight: 600;
-  }
-
-  p {
-    color: $color-muted;
-    font-size: 14px;
-    line-height: 1.7;
-  }
+.memberHeader {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
 }
 
 .iconBox {
@@ -54,4 +58,128 @@
   background: rgba(124, 92, 255, 0.12);
   border: 1px solid rgba(124, 92, 255, 0.3);
   color: $color-secondary;
+  flex-shrink: 0;
+}
+
+.role {
+  display: block;
+  font-family: $font-mono;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $color-subtle;
+  margin-bottom: 2px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: $color-text;
+}
+
+.memberDescription {
+  color: $color-muted;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.memberTags {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  li {
+    padding: 5px 10px;
+    font-size: 11px;
+    font-family: $font-mono;
+    color: $color-muted;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid $color-border;
+    border-radius: 999px;
+  }
+}
+
+.beliefs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 64px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.belief {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 18px 20px;
+  border-radius: $radius-md;
+  color: $color-text;
+  font-size: 15px;
+  line-height: 1.6;
+  @include glass;
+}
+
+.beliefIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  color: $color-secondary;
+  flex-shrink: 0;
+}
+
+.location {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 28px;
+  border-radius: $radius-lg;
+  margin-bottom: 32px;
+  @include glass-strong;
+
+  p {
+    color: $color-muted;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 6px;
+  }
+}
+
+.locationIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: $gradient-primary;
+  color: #0b0d18;
+  flex-shrink: 0;
+  box-shadow: $shadow-glow;
+}
+
+.locationTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  color: $color-text;
+
+  svg {
+    color: $color-secondary;
+  }
 }

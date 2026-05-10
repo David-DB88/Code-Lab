@@ -6,10 +6,10 @@ import { HeroScene } from "./HeroScene/HeroScene";
 import styles from "./hero.module.scss";
 
 const HIGHLIGHTS = [
-  "React + TypeScript",
-  "Three.js scenes",
-  "Framer Motion",
-  "Responsive UI",
+  ".NET / C#",
+  "React / Vue",
+  "TypeScript",
+  "AI Integration",
 ];
 
 export const HeroSection = () => {
@@ -26,18 +26,17 @@ export const HeroSection = () => {
         >
           <span className={styles.eyebrow}>
             <Sparkles size={14} />
-            Code Lab — Software Studio
+            Code Lab — A Senior Development Team
           </span>
 
           <h1 className={styles.title}>
-            We build digital products that look{" "}
-            <span className={styles.gradient}>beautiful</span>, work fast, and{" "}
-            <span className={styles.gradientAlt}>scale</span> with your business.
+            We build <span className={styles.gradient}>production-grade</span> web
+            applications <span className={styles.gradientAlt}>end-to-end</span>.
           </h1>
 
           <p className={styles.lead}>
-            Code Lab creates modern web applications, business websites, interactive
-            platforms, and custom frontend solutions for companies and startups.
+            .NET backend, React/Vue frontend, AI integration, and in-house design — under
+            one coordinated team. Built for startups, SaaS companies, and fintech.
           </p>
 
           <div className={styles.actions}>
@@ -49,7 +48,7 @@ export const HeroSection = () => {
             >
               Explore Projects
             </Button>
-            <Button as="a" href="#contact" size="lg" variant="secondary">
+            <Button as="a" href="/contact" size="lg" variant="secondary">
               Contact Us
             </Button>
           </div>

@@ -24,8 +24,9 @@ export const ContactCta = () => {
               <span className={styles.gradient}>Let's build it together.</span>
             </h2>
             <p className={styles.lead}>
-              Tell us what you want to ship — a landing page, a business website, or a
-              full interactive product. We'll come back with a clean plan.
+              Tell us what you want to ship — a full-stack web application, an API,
+              an AI integration, or a complete product. We'll come back with a clean
+              architecture plan.
             </p>
 
             <div className={styles.actions}>
